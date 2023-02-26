@@ -1,0 +1,20 @@
+// Vetor de faturamento diário
+const FatD = [1000, 1500, 800, 2000, 1200, 0, 0, 1700, 1300, 900, 1400, 1800, 1900, 1100, 1000, 0, 0, 1200, 900, 1300, 2000, 2100, 1500, 1700, 1400, 1100, 0, 0];
+
+// Calcula o menor valor de faturamento diário
+const menorFaturamento = Math.min(...FatD);
+
+// Calcula o maior valor de faturamento diário
+const maiorFaturamento = Math.max(...FatD);
+
+// Calcula a média de faturamento diário, ignorando dias sem faturamento
+const diasComFaturamento = FatD.filter(faturamento => faturamento > 0);
+const mediaFaturamento = diasComFaturamento.reduce((acc, faturamento) => acc + faturamento, 0) / diasComFaturamento.length;
+
+// Calcula o número de dias em que o faturamento diário foi superior à média mensal
+const diasAcimaDaMedia = FatD.filter(faturamento => faturamento > mediaFaturamento).length;
+
+// Exibe os resultados
+console.log("Menor faturamento diário:", menorFaturamento);
+console.log("Maior faturamento diário:", maiorFaturamento);
+console.log("Número de dias com faturamento acima da média mensal:", diasAcimaDaMedia);
