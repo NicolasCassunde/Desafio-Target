@@ -1,0 +1,26 @@
+// solicita ao usuário um número
+const numero = parseInt(prompt("Digite um número:"));
+
+// define as variáveis que irão armazenar os dois primeiros valores da sequência de Fibonacci
+let numero1 = 0;
+let numero2 = 1;
+
+// define a variável que irá armazenar o próximo valor da sequência de Fibonacci
+let proximoNumero;
+
+// executa um laço para gerar a sequência de Fibonacci até que o próximo valor seja maior ou igual ao número informado pelo usuário
+while (proximoNumero < numero) {
+  // calcula o próximo valor da sequência de Fibonacci como a soma dos dois valores anteriores
+  proximoNumero = numero1 + numero2;
+  
+  // atualiza as variáveis que armazenam os dois valores anteriores
+  numero1 = numero2;
+  numero2 = proximoNumero;
+}
+
+// verifica se o número informado pelo usuário pertence à sequência de Fibonacci
+if (proximoNumero === numero) {
+  console.log(numero + " pertence à sequência de Fibonacci!");
+} else {
+  console.log(numero + " não pertence à sequência de Fibonacci.");
+}
