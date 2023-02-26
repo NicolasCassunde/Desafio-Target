@@ -1,0 +1,9 @@
+let entrada = "Ola Mundo"; // ou poderia ser lido de uma entrada do usuário
+let saida = "";
+
+// percorre a string de trás para frente e adiciona cada caractere na nova string
+for (let i = entrada.length - 1; i >= 0; i--) {
+  saida += entrada[i];
+}
+
+console.log(saida); // "odnuM alO""
